@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#1A150D">
+  <link rel="canonical" href="https://dauracastro.es/proyecto-detalle.html" />
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+  <title>Proyecto · Daura Castro · Interiorismo & Decoración</title>
+  <meta name="description" content="Detalle de proyecto de interiorismo y decoración de Daura Castro." />
+
+  <meta property="og:title"        content="Proyecto · Daura Castro · Interiorismo &amp; Decoración" />
+  <meta property="og:description"  content="Detalle de proyecto de interiorismo y decoración de Daura Castro." />
+  <meta property="og:type"         content="website" />
+  <meta property="og:url"          content="https://dauracastro.es/proyecto-detalle.html" />
+  <meta property="og:image"        content="https://dauracastro.es/img/og-cover.jpg" />
+  <meta property="og:image:width"  content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:image"       content="https://dauracastro.es/img/og-cover.jpg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <style>
+    /* ── Hero del proyecto ───────────────────────────────────── */
+    .detalle-hero {
+      position: relative;
+      height: 75vh;
+      min-height: 480px;
+      display: flex;
+      align-items: flex-end;
+      padding-bottom: clamp(48px, 7vw, 80px);
+      overflow: hidden;
+    }
+    .detalle-hero__img {
+      position: absolute;
+      inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .detalle-hero__color {
+      position: absolute;
+      inset: 0;
+    }
+    .detalle-hero__overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top,
+        rgba(26,21,13,.85) 0%,
+        rgba(26,21,13,.35) 55%,
+        rgba(26,21,13,.15) 100%);
+    }
+    .detalle-hero__content {
+      position: relative;
+      z-index: 2;
+      width: var(--wrap);
+      margin: 0 auto;
+    }
+    .detalle-hero__back {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: rgba(196,181,165,.6);
+      margin-bottom: 32px;
+      transition: color .3s;
+    }
+    .detalle-hero__back:hover { color: var(--light); }
+    .detalle-hero__cat {
+      display: block;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--border);
+      margin-bottom: 14px;
+    }
+    .detalle-hero__title {
+      font-family: var(--font-display);
+      font-size: clamp(36px, 6vw, 72px);
+      font-weight: 300;
+      color: var(--light);
+      line-height: 1.05;
+    }
+    .detalle-hero__title em { font-style: italic; color: var(--border); }
+
+    /* ── Meta row ────────────────────────────────────────────── */
+    .detalle-meta {
+      background: var(--bg-alt);
+      border-bottom: 1px solid rgba(196,181,165,.2);
+      padding: 28px 0;
+    }
+    .detalle-meta__inner {
+      display: flex;
+      gap: clamp(32px, 6vw, 80px);
+      flex-wrap: wrap;
+    }
+    .detalle-meta__label {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 5px;
+    }
+    .detalle-meta__value {
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 300;
+      color: var(--text);
+    }
+
+    /* ── Cuerpo del proyecto ─────────────────────────────────── */
+    .detalle-body {
+      background: var(--bg);
+      padding: clamp(56px, 8vw, 96px) 0;
+    }
+    .detalle-layout {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: clamp(40px, 7vw, 96px);
+      align-items: start;
+    }
+    .detalle-sidebar__intro {
+      font-family: var(--font-display);
+      font-size: clamp(20px, 2.2vw, 26px);
+      font-weight: 300;
+      line-height: 1.5;
+      color: var(--text);
+      margin-bottom: 32px;
+    }
+    .detalle-sidebar__intro em { font-style: italic; color: var(--accent); }
+    .detalle-sidebar__desc {
+      font-size: clamp(14px, 1.1vw, 16px);
+      line-height: 1.8;
+      color: var(--text);
+      opacity: .75;
+      margin-bottom: 36px;
+    }
+
+    /* Tags de servicios */
+    .detalle-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 40px;
+    }
+    .detalle-tag {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      padding: 7px 14px;
+      border: 1px solid var(--border);
+      color: var(--muted);
+    }
+
+    /* ── Galería secundaria ──────────────────────────────────── */
+    .detalle-gallery {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4px;
+    }
+    .detalle-gallery__item {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 4/3;
+      background: var(--bg-alt);
+    }
+    .detalle-gallery__item img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform .7s var(--ease);
+    }
+    .detalle-gallery__item:hover img { transform: scale(1.04); }
+    .detalle-gallery__placeholder {
+      width: 100%; height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: rgba(245,240,232,.3);
+    }
+    .detalle-gallery__item--wide {
+      grid-column: 1 / 3;
+      aspect-ratio: 16/7;
+    }
+
+    /* Estado "próximamente" — cuando no hay fotos reales */
+    .detalle-coming {
+      grid-column: 1 / 3;
+      aspect-ratio: 16/6;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .detalle-coming__label {
+      font-family: var(--font-display);
+      font-size: clamp(20px, 2.5vw, 28px);
+      font-weight: 300;
+      color: var(--text);
+      opacity: .4;
+    }
+    .detalle-coming__sub {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--muted);
+      opacity: .5;
+    }
+
+    /* ── Nav entre proyectos ─────────────────────────────────── */
+    .detalle-nav {
+      background: var(--bg-alt);
+      border-top: 1px solid rgba(196,181,165,.2);
+      padding: clamp(28px, 4vw, 48px) 0;
+    }
+    .detalle-nav__inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+    }
+    .detalle-nav__link {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      max-width: 42%;
+    }
+    .detalle-nav__link--next { align-items: flex-end; text-align: right; }
+    .detalle-nav__dir {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      transition: color .3s;
+    }
+    .detalle-nav__name {
+      font-family: var(--font-display);
+      font-size: clamp(16px, 2vw, 22px);
+      font-weight: 300;
+      color: var(--text);
+      transition: color .3s;
+    }
+    .detalle-nav__link:hover .detalle-nav__dir  { color: var(--accent); }
+    .detalle-nav__link:hover .detalle-nav__name { color: var(--accent); }
+    .detalle-nav__center {
+      font-family: var(--font-display);
+      font-size: 13px;
+      font-weight: 300;
+      color: rgba(139,115,85,.4);
+      white-space: nowrap;
+    }
+
+    /* ── Lightbox ────────────────────────────────────────────── */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(26,21,13,.96);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+    }
+    .lightbox.open { display: flex; }
+
+    .lightbox__img {
+      max-width: 90vw;
+      max-height: 88vh;
+      object-fit: contain;
+      display: block;
+      user-select: none;
+      transition: opacity 0.15s ease;
+    }
+
+    .lightbox__btn {
+      position: fixed;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 64px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255,255,255,.92);
+      border: none;
+      border-radius: 50%;
+      color: #1A150D;
+      font-size: 26px;
+      font-weight: 700;
+      box-shadow: 0 4px 24px rgba(0,0,0,.35);
+      transition: background .2s, transform .2s, box-shadow .2s;
+      z-index: 1001;
+    }
+    .lightbox__btn:hover {
+      background: #fff;
+      box-shadow: 0 6px 32px rgba(0,0,0,.5);
+      transform: translateY(-50%) scale(1.08);
+    }
+    .lightbox__prev { left: 24px; }
+    .lightbox__next { right: 24px; }
+
+    .lightbox__close {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(245,240,232,.6);
+      font-size: 24px;
+      font-weight: 300;
+      z-index: 1001;
+      transition: color .25s;
+    }
+    .lightbox__close:hover { color: var(--light); }
+
+    .lightbox__counter {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: rgba(196,181,165,.5);
+      z-index: 1001;
+    }
+
+    /* Cursor pointer en las fotos de la galería */
+    .detalle-gallery__item img { cursor: zoom-in; }
+
+    /* ── Responsive ──────────────────────────────────────────── */
+    @media (max-width: 860px) {
+      .detalle-layout { grid-template-columns: 1fr; }
+
+      /* Galería: scroll horizontal con peek en móvil */
+
+      /* Wrapper que rompe el overflow:hidden del body */
+      .detalle-gallery-scroll {
+        width: 100vw;
+        margin-left: calc(-1 * (100vw - 100%) / 2);
+        overflow-x: auto;
+        overflow-y: visible;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+      }
+      .detalle-gallery-scroll::-webkit-scrollbar { display: none; }
+
+      .detalle-gallery {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        scroll-snap-type: x mandatory;
+        width: max-content;
+        /* Padding izquierdo = margen del container; derecho = peek */
+        padding: 0 48px 0 calc((100vw - var(--wrap)) / 2);
+      }
+
+      .detalle-gallery__item {
+        flex: 0 0 78vw;
+        width: 78vw;
+        aspect-ratio: 4/3;
+        scroll-snap-align: start;
+        grid-column: unset;
+      }
+      .detalle-gallery__item--wide {
+        flex: 0 0 85vw;
+        width: 85vw;
+        aspect-ratio: 16/9;
+        grid-column: unset;
+      }
+      .detalle-coming {
+        flex: 0 0 78vw;
+        width: 78vw;
+        grid-column: unset;
+        aspect-ratio: 4/3;
+      }
+    }
+
+    @media (max-width: 580px) {
+      .detalle-meta__inner { gap: 20px; }
+      .detalle-nav__center { display: none; }
+
+      /* En móvil pequeño las tarjetas ocupan más ancho */
+      .detalle-gallery__item { flex: 0 0 86vw; max-width: 86vw; }
+      .detalle-gallery__item--wide { flex: 0 0 92vw; max-width: 92vw; }
+      .detalle-coming { flex: 0 0 86vw; max-width: 86vw; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="cursor"      aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+
+  <!-- ══ NAV ══════════════════════════════════════════════════ -->
+  <header class="nav" role="banner">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo"><img src="img/logo.png" alt="Daura Castro" class="nav-logo-img" /></a>
+      <nav class="nav-links" aria-label="Navegación principal">
+        <a href="index.html"      class="nav-link">Inicio</a>
+        <a href="servicios.html"  class="nav-link">Servicios</a>
+        <a href="proyectos.html"  class="nav-link">Proyectos</a>
+        <a href="contacto.html"   class="nav-link">Contacto</a>
+      </nav>
+      <button class="hamburger" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <nav class="nav-overlay" aria-label="Menú móvil">
+    <button class="nav-close" aria-label="Cerrar menú">&#x2715;</button>
+    <a href="index.html" class="nav-link">Inicio</a>
+    <a href="servicios.html" class="nav-link">Servicios</a>
+    <a href="proyectos.html" class="nav-link">Proyectos</a>
+    <a href="contacto.html"  class="nav-link">Contacto</a>
+  </nav>
+
+  <main id="main-content">
+    <!-- Renderizado por JS -->
+  </main>
+
+  <!-- ══ FOOTER ════════════════════════════════════════════════ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container footer-inner">
+      <a href="index.html" class="footer-logo"><img src="img/logo.png" alt="Daura Castro" class="nav-logo-img" /></a>
+      <nav class="footer-social" aria-label="Redes sociales">
+        <a href="#">Instagram</a>
+        <a href="#">Pinterest</a>
+        <a href="#">Houzz</a>
+      </nav>
+      <div class="footer-right">
+        <p class="footer-copy">© 2026 Daura Castro. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="js/main.js" defer></script>
+
+  <script>
+  /* ============================================================
+     Base de datos de proyectos
+     Añade aquí tus proyectos reales. Campos:
+       id        — número (1-9)
+       title     — nombre del proyecto
+       subtitle  — em italic en el titular
+       cat       — 'Diseño' | 'Fotografía'
+       location  — ubicación del proyecto
+       year      — año
+       surface   — superficie (opcional)
+       style     — estilo (opcional)
+       intro     — frase principal del sidebar
+       desc      — párrafo descriptivo
+       tags      — array de etiquetas de servicio
+       heroImg   — ruta de imagen de hero (o null)
+       heroColor — color de fondo si no hay imagen
+       gallery   — array de { src, alt, wide } para galería secundaria
+                   wide: true ocupa todo el ancho
+  ============================================================ */
+  const PROYECTOS = [
+    {
+      id: 1,
+      title: 'Villa',
+      subtitle: 'Tenerife Norte',
+      cat: 'Diseño',
+      location: 'Tenerife Norte',
+      year: '2025',
+      surface: '210 m²',
+      style: 'Mediterráneo contemporáneo',
+      intro: 'Una cocina que <em>redefine</em> el corazón del hogar.',
+      desc: 'Proyecto de diseño y render para una villa familiar en el norte de la isla. El reto principal fue abrir la planta baja para integrar cocina, salón y terraza en una sola secuencia de espacios luminosos. La isla de mármol se convierte en el elemento vertebrador de la vida doméstica.',
+      tags: ['Distribución', 'Materiales', 'Render 3D', 'Paleta de color', 'Selección de mobiliario'],
+      heroImg: 'proyecto-1.jpg',
+      heroColor: null,
+      gallery: [
+        { src: 'proyecto-1.jpg', alt: 'Cocina con isla de mármol', wide: true },
+        { src: null, alt: 'Zona de salón', wide: false, color: '#2C3E50' },
+        { src: null, alt: 'Detalle encimera', wide: false, color: '#3D4F62' },
+      ]
+    },
+    {
+      id: 2,
+      title: 'Dormitorio',
+      subtitle: 'Render · Diseño',
+      cat: 'Diseño',
+      location: 'Proyecto online',
+      year: '2025',
+      surface: '28 m²',
+      style: 'Nórdico cálido',
+      intro: 'Un dormitorio que invita a <em>descansar de verdad.</em>',
+      desc: 'Proyecto de diseño y renderizado para cliente remoto. Planteamos un dormitorio principal con cabecero tapizado a medida, paleta de neutros cálidos y una zona de vestidor integrada detrás de un panel de madera. Entregado como plano ejecutable con lista de proveedores.',
+      tags: ['Plano de distribución', 'Render 3D', 'Paleta de materiales', 'Lista de compras'],
+      heroImg: 'proyecto-2.jpg',
+      heroColor: null,
+      gallery: [
+        { src: 'proyecto-2.jpg', alt: 'Dormitorio con cabecero tapizado', wide: true },
+        { src: null, alt: 'Detalle textiles', wide: false, color: '#8B7355' },
+        { src: null, alt: 'Zona de vestidor', wide: false, color: '#6B5D4F' },
+      ]
+    },
+    {
+      id: 3,
+      title: 'Finca',
+      subtitle: 'Tenerife',
+      cat: 'Diseño',
+      location: 'Tenerife',
+      year: '2024',
+      surface: '340 m²',
+      style: 'Rústico contemporáneo',
+      intro: 'La calidez de lo <em>rústico</em> con el confort de lo moderno.',
+      desc: 'Proyecto de diseño y render para una finca tradicional canaria. Recuperamos las vigas originales de tea y las integramos con materiales contemporáneos: encimeras de pizarra, sofás de lino y ventanales de arco que enmarcan las vistas al campo. Un proyecto de alma y carácter.',
+      tags: ['Distribución', 'Render 3D', 'Paleta de materiales', 'Selección de mobiliario'],
+      heroImg: 'proyecto-3.jpg',
+      heroColor: null,
+      gallery: [
+        { src: 'proyecto-3.jpg', alt: 'Salón con vigas de madera y ventanal', wide: true },
+        { src: null, alt: 'Detalle vigas de tea', wide: false, color: '#3D2E1E' },
+        { src: null, alt: 'Cocina rústica', wide: false, color: '#4A3828' },
+      ]
+    },
+    {
+      id: 4,
+      title: 'Apartamento',
+      subtitle: 'Santa Cruz',
+      cat: 'Diseño',
+      location: 'Santa Cruz de Tenerife',
+      year: '2026',
+      surface: '65 m²',
+      style: 'Minimalismo cálido',
+      intro: 'Próximamente — <em>en proceso</em>.',
+      desc: 'Proyecto de diseño y render para un apartamento céntrico en Santa Cruz. Optimización de espacios con soluciones de almacenamiento integrado y una paleta de colores que amplía visualmente el espacio.',
+      tags: ['Render 3D', 'Distribución', 'Materiales', 'Lista de compras'],
+      heroImg: null,
+      heroColor: '#8B7355',
+      gallery: []
+    },
+    {
+      id: 5,
+      title: 'Airbnb',
+      subtitle: 'Puerto de la Cruz',
+      cat: 'Fotografía',
+      location: 'Puerto de la Cruz',
+      year: '2026',
+      surface: '90 m²',
+      style: 'Fotografía de espacios',
+      intro: 'Fotografía que <em>convierte visitas en reservas.</em>',
+      desc: 'Reportaje fotográfico completo para vivienda vacacional. Incluye sesión de styling previo, fotografía de todos los espacios con luz natural y artificial, y edición completa lista para publicar en Airbnb y plataformas de alquiler.',
+      tags: ['Fotografía', 'Styling', 'Edición', 'Entrega digital'],
+      heroImg: null,
+      heroColor: '#6B7C5E',
+      gallery: []
+    },
+    {
+      id: 6,
+      title: 'Estudio',
+      subtitle: 'La Laguna',
+      cat: 'Diseño',
+      location: 'San Cristóbal de La Laguna',
+      year: '2026',
+      surface: '42 m²',
+      style: 'Funcional urbano',
+      intro: 'Próximamente — <em>en proceso</em>.',
+      desc: 'Diseño de un estudio universitario con distribución optimizada. Zona de trabajo, descanso y almacenamiento en un espacio reducido pero cargado de personalidad.',
+      tags: ['Render 3D', 'Distribución', 'Mobiliario a medida'],
+      heroImg: null,
+      heroColor: '#A89070',
+      gallery: []
+    },
+    {
+      id: 7,
+      title: 'Chalet',
+      subtitle: 'El Médano',
+      cat: 'Fotografía',
+      location: 'El Médano, Tenerife',
+      year: '2026',
+      surface: '180 m²',
+      style: 'Fotografía de espacios',
+      intro: 'Próximamente — <em>en proceso</em>.',
+      desc: 'Reportaje fotográfico para chalet frente al mar en El Médano. Captaremos la luz costera, los materiales naturales y el ambiente único de esta vivienda para atraer al viajero que busca autenticidad.',
+      tags: ['Fotografía', 'Styling', 'Edición', 'Entrega digital'],
+      heroImg: null,
+      heroColor: '#C4B5A5',
+      gallery: []
+    },
+    {
+      id: 8,
+      title: 'Casa rural',
+      subtitle: 'Güímar',
+      cat: 'Fotografía',
+      location: 'Güímar, Tenerife',
+      year: '2026',
+      surface: '160 m²',
+      style: 'Fotografía de espacios',
+      intro: 'Próximamente — <em>en proceso</em>.',
+      desc: 'Reportaje fotográfico para casa rural en el Valle de Güímar. Captaremos la esencia del entorno volcánico y la arquitectura tradicional canaria para atraer al viajero que busca autenticidad.',
+      tags: ['Fotografía', 'Styling', 'Edición', 'Entrega digital'],
+      heroImg: null,
+      heroColor: '#7A8F6E',
+      gallery: []
+    },
+    {
+      id: 9,
+      title: 'Villa panorámica',
+      subtitle: 'Adeje',
+      cat: 'Diseño',
+      location: 'Adeje, Tenerife Sur',
+      year: '2026',
+      surface: '280 m²',
+      style: 'Lujo contemporáneo',
+      intro: 'Próximamente — <em>en proceso</em>.',
+      desc: 'Proyecto de diseño para villa de lujo con vistas al Teide y al océano. Un espacio que dialoga con el paisaje volcánico a través de grandes ventanales, materiales pétreos y una paleta de tonos tierra.',
+      tags: ['Render 3D', 'Distribución', 'Materiales premium', 'Lista de proveedores'],
+      heroImg: null,
+      heroColor: '#3D2E1E',
+      gallery: []
+    }
+  ];
+
+  /* ── Lectura del param ?id= ───────────────────────────────── */
+  const params  = new URLSearchParams(window.location.search);
+  const id      = parseInt(params.get('id'), 10);
+  const proyecto = PROYECTOS.find(p => p.id === id);
+
+  const main = document.getElementById('main-content');
+
+  if (!proyecto) {
+    main.innerHTML = `
+      <section class="page-header">
+        <div class="container">
+          <span class="overline">404</span>
+          <h1>Proyecto <em>no encontrado</em></h1>
+        </div>
+      </section>
+      <div style="padding:80px 0; text-align:center;">
+        <a href="proyectos.html" class="btn-primary">← Volver al portfolio</a>
+      </div>`;
+  } else {
+
+    /* Anterior y siguiente */
+    const total   = PROYECTOS.length;
+    const prevP   = PROYECTOS.find(p => p.id === (id === 1 ? total : id - 1));
+    const nextP   = PROYECTOS.find(p => p.id === (id === total ? 1 : id + 1));
+
+    /* Construir galería */
+    let galleryHTML = '';
+    if (proyecto.gallery && proyecto.gallery.length > 0) {
+      const items = proyecto.gallery.map(g => {
+        const cls = g.wide ? 'detalle-gallery__item detalle-gallery__item--wide' : 'detalle-gallery__item';
+        if (g.src) {
+          return `<div class="${cls}"><img src="${g.src}" alt="${g.alt}" loading="lazy" /></div>`;
+        } else {
+          const bg = g.color || '#2C2416';
+          return `<div class="${cls}"><div class="detalle-gallery__placeholder" style="background:${bg};"></div></div>`;
+        }
+      }).join('');
+      galleryHTML = `<div class="detalle-gallery-scroll"><div class="detalle-gallery">${items}</div></div>`;
+    } else {
+      galleryHTML = `
+        <div class="detalle-gallery-scroll">
+          <div class="detalle-gallery">
+            <div class="detalle-coming" style="background:${proyecto.heroColor || '#2C2416'}20; border: 1px solid rgba(196,181,165,.15);">
+              <span class="detalle-coming__label">Imágenes próximamente</span>
+              <span class="detalle-coming__sub">Proyecto en proceso</span>
+            </div>
+          </div>
+        </div>`;
+    }
+
+    /* Tags */
+    const tagsHTML = proyecto.tags.map(t =>
+      `<span class="detalle-tag">${t}</span>`
+    ).join('');
+
+    /* Hero */
+    const heroMedia = proyecto.heroImg
+      ? `<img class="detalle-hero__img" src="${proyecto.heroImg}" alt="${proyecto.title} · ${proyecto.subtitle}" />`
+      : `<div class="detalle-hero__color" style="background:${proyecto.heroColor};"></div>`;
+
+    /* Metas opcionales */
+    let metasHTML = `
+      <div class="detalle-meta__item">
+        <div class="detalle-meta__label">Categoría</div>
+        <div class="detalle-meta__value">${proyecto.cat}</div>
+      </div>
+      <div class="detalle-meta__item">
+        <div class="detalle-meta__label">Ubicación</div>
+        <div class="detalle-meta__value">${proyecto.location}</div>
+      </div>
+      <div class="detalle-meta__item">
+        <div class="detalle-meta__label">Año</div>
+        <div class="detalle-meta__value">${proyecto.year}</div>
+      </div>`;
+    if (proyecto.surface) metasHTML += `
+      <div class="detalle-meta__item">
+        <div class="detalle-meta__label">Superficie</div>
+        <div class="detalle-meta__value">${proyecto.surface}</div>
+      </div>`;
+    if (proyecto.style) metasHTML += `
+      <div class="detalle-meta__item">
+        <div class="detalle-meta__label">Estilo</div>
+        <div class="detalle-meta__value">${proyecto.style}</div>
+      </div>`;
+
+    main.innerHTML = `
+
+      <!-- Hero -->
+      <section class="detalle-hero">
+        ${heroMedia}
+        <div class="detalle-hero__overlay"></div>
+        <div class="detalle-hero__content">
+          <a href="proyectos.html" class="detalle-hero__back">← Todos los proyectos</a>
+          <span class="detalle-hero__cat">${proyecto.cat}</span>
+          <h1 class="detalle-hero__title">${proyecto.title} <em>${proyecto.subtitle}</em></h1>
+        </div>
+      </section>
+
+      <!-- Meta row -->
+      <div class="detalle-meta">
+        <div class="container">
+          <div class="detalle-meta__inner">
+            ${metasHTML}
+          </div>
+        </div>
+      </div>
+
+      <!-- Cuerpo -->
+      <section class="detalle-body">
+        <div class="container">
+          <div class="detalle-layout">
+
+            <!-- Sidebar -->
+            <div class="detalle-sidebar">
+              <p class="detalle-sidebar__intro">${proyecto.intro}</p>
+              <p class="detalle-sidebar__desc">${proyecto.desc}</p>
+              <div class="detalle-tags">${tagsHTML}</div>
+              <a href="contacto.html" class="btn-primary">Consultar proyecto similar</a>
+            </div>
+
+            <!-- Galería -->
+            <div>
+              ${galleryHTML}
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Nav anterior / siguiente -->
+      <nav class="detalle-nav" aria-label="Navegación entre proyectos">
+        <div class="container">
+          <div class="detalle-nav__inner">
+            <a href="proyecto-detalle.html?id=${prevP.id}" class="detalle-nav__link">
+              <span class="detalle-nav__dir">← Anterior</span>
+              <span class="detalle-nav__name">${prevP.title} · ${prevP.subtitle}</span>
+            </a>
+            <span class="detalle-nav__center">${id} / ${total}</span>
+            <a href="proyecto-detalle.html?id=${nextP.id}" class="detalle-nav__link detalle-nav__link--next">
+              <span class="detalle-nav__dir">Siguiente →</span>
+              <span class="detalle-nav__name">${nextP.title} · ${nextP.subtitle}</span>
+            </a>
+          </div>
+        </div>
+      </nav>
+
+      <!-- CTA -->
+      <section class="section-cta" aria-label="Contacto">
+        <div class="container">
+          <div class="cta-layout">
+            <div class="cta-text">
+              <span class="overline overline-light">¿Te inspira?</span>
+              <h2 class="cta-title">Hablemos sobre<br><em>tu espacio</em></h2>
+              <p class="cta-sub">
+                Cuéntame tu proyecto y vemos cómo hacerlo realidad.
+              </p>
+            </div>
+            <div class="cta-actions">
+              <a href="https://wa.me/34684158317" class="btn-whatsapp" target="_blank" rel="noopener">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                </svg>
+                Escribir por WhatsApp
+              </a>
+              <a href="contacto.html" class="btn-ghost btn-ghost--light">
+                Formulario de contacto <span aria-hidden="true">→</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    `;
+
+    /* Actualizar <title> */
+    document.title = `${proyecto.title} · ${proyecto.subtitle} · Daura Castro`;
+
+    /* GSAP */
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!reduced && typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+      gsap.registerPlugin(ScrollTrigger);
+
+      gsap.from(['.detalle-hero__back', '.detalle-hero__cat', '.detalle-hero__title'], {
+        y: 28, opacity: 0, duration: 1, ease: 'power2.out', stagger: 0.14, delay: 0.2
+      });
+      gsap.from('.detalle-meta__item', {
+        scrollTrigger: { trigger: '.detalle-meta', start: 'top 88%' },
+        y: 16, opacity: 0, duration: 0.7, ease: 'power2.out', stagger: 0.08
+      });
+      gsap.from(['.detalle-sidebar__intro', '.detalle-sidebar__desc', '.detalle-tags', '.detalle-sidebar .btn-primary'], {
+        scrollTrigger: { trigger: '.detalle-layout', start: 'top 82%' },
+        y: 30, opacity: 0, duration: 1, ease: 'power2.out', stagger: 0.12
+      });
+      gsap.from('.detalle-gallery__item, .detalle-coming', {
+        scrollTrigger: { trigger: '.detalle-gallery, .detalle-coming', start: 'top 85%' },
+        y: 24, opacity: 0, duration: 0.9, ease: 'power2.out', stagger: 0.1
+      });
+    }
+
+    /* Reinicializar cursor hover sobre los nuevos elementos */
+    if (typeof document.querySelectorAll === 'function') {
+      const cursor     = document.querySelector('.cursor');
+      const cursorRing = document.querySelector('.cursor-ring');
+      if (cursor && cursorRing) {
+        document.querySelectorAll('a, button').forEach(el => {
+          el.addEventListener('mouseenter', () => { cursor.classList.add('hov'); cursorRing.classList.add('hov'); });
+          el.addEventListener('mouseleave', () => { cursor.classList.remove('hov'); cursorRing.classList.remove('hov'); });
+        });
+      }
+    }
+
+  }
+  </script>
+
+  <div class="nav-overlay-backdrop"></div>
+
+  <!-- ══ LIGHTBOX HTML ════════════════════════════════════════ -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Imagen ampliada">
+    <button class="lightbox__close" id="lbClose" aria-label="Cerrar">&#x2715;</button>
+    <button class="lightbox__btn lightbox__prev" id="lbPrev" aria-label="Anterior">&#8592;</button>
+    <img class="lightbox__img" id="lbImg" src="" alt="" />
+    <button class="lightbox__btn lightbox__next" id="lbNext" aria-label="Siguiente">&#8594;</button>
+    <span class="lightbox__counter" id="lbCounter"></span>
+  </div>
+
+  <!-- ══ LIGHTBOX JS — después del HTML para que los IDs existan ══ -->
+  <script>
+  (function () {
+    var lightbox  = document.getElementById('lightbox');
+    var lbImg     = document.getElementById('lbImg');
+    var lbPrev    = document.getElementById('lbPrev');
+    var lbNext    = document.getElementById('lbNext');
+    var lbClose   = document.getElementById('lbClose');
+    var lbCounter = document.getElementById('lbCounter');
+
+    if (!lightbox || !lbImg) return;
+
+    var images  = [];
+    var current = 0;
+
+    function collectImages() {
+      images = [];
+      document.querySelectorAll('.detalle-gallery__item img').forEach(function(img) {
+        images.push({ src: img.getAttribute('src'), alt: img.alt });
+      });
+    }
+
+    function show(index) {
+      if (images.length === 0) return;
+      current = (index + images.length) % images.length;
+      /* Forzar recarga visual vaciando src antes de asignar el nuevo */
+      lbImg.removeAttribute('src');
+      lbImg.style.opacity = '0';
+      setTimeout(function() {
+        lbImg.setAttribute('src', images[current].src);
+        lbImg.alt = images[current].alt;
+        lbImg.style.opacity = '1';
+      }, 60);
+      lbCounter.textContent = (current + 1) + ' / ' + images.length;
+      var single = images.length === 1;
+      lbPrev.style.display = single ? 'none' : 'flex';
+      lbNext.style.display = single ? 'none' : 'flex';
+    }
+
+    function openLb(index) {
+      collectImages();
+      show(index);
+      lightbox.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLb() {
+      lightbox.classList.remove('open');
+      document.body.style.overflow = '';
+      lbImg.removeAttribute('src');
+    }
+
+    /* Event delegation — funciona aunque las imágenes se generen después */
+    document.addEventListener('click', function(e) {
+      var img = e.target.closest('.detalle-gallery__item img');
+      if (!img) return;
+      var allImgs = Array.from(document.querySelectorAll('.detalle-gallery__item img'));
+      var idx = allImgs.indexOf(img);
+      openLb(idx >= 0 ? idx : 0);
+    });
+
+    lbPrev.addEventListener('click',  function() { show(current - 1); });
+    lbNext.addEventListener('click',  function() { show(current + 1); });
+    lbClose.addEventListener('click', closeLb);
+
+    lightbox.addEventListener('click', function(e) {
+      if (e.target === lightbox) closeLb();
+    });
+
+    document.addEventListener('keydown', function(e) {
+      if (!lightbox.classList.contains('open')) return;
+      if (e.key === 'ArrowLeft')  show(current - 1);
+      if (e.key === 'ArrowRight') show(current + 1);
+      if (e.key === 'Escape')     closeLb();
+    });
+
+    var touchStartX = 0;
+    lightbox.addEventListener('touchstart', function(e) {
+      touchStartX = e.touches[0].clientX;
+    }, { passive: true });
+    lightbox.addEventListener('touchend', function(e) {
+      var diff = touchStartX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 50) {
+        diff > 0 ? show(current + 1) : show(current - 1);
+      }
+    }, { passive: true });
+
+  })();
+  </script>
+
+</body>
+</html>

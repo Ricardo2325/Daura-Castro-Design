@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#1A150D">
+  <link rel="canonical" href="https://dauracastro.es/proyectos.html" />
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+  <title>Proyectos · Daura Castro · Interiorismo & Decoración · Tenerife</title>
+  <meta name="description" content="Portfolio de proyectos de interiorismo y decoración de Daura Castro en Tenerife." />
+
+  <meta property="og:title"        content="Proyectos · Daura Castro · Interiorismo &amp; Decoración" />
+  <meta property="og:description"  content="Portfolio de proyectos de interiorismo y decoración en Tenerife." />
+  <meta property="og:type"         content="website" />
+  <meta property="og:url"          content="https://dauracastro.es/proyectos.html" />
+  <meta property="og:image"        content="https://dauracastro.es/img/og-cover.jpg" />
+  <meta property="og:image:width"  content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:image"       content="https://dauracastro.es/img/og-cover.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <div class="cursor" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+
+  <header class="nav" role="banner">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo"><img src="img/logo.png" alt="Daura Castro" class="nav-logo-img" /></a>
+      <nav class="nav-links" aria-label="Navegación principal">
+        <a href="index.html" class="nav-link">Inicio</a>
+        <a href="servicios.html" class="nav-link">Servicios</a>
+        <a href="proyectos.html" class="nav-link" aria-current="page">Proyectos</a>
+        <a href="contacto.html"  class="nav-link">Contacto</a>
+      </nav>
+      <button class="hamburger" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <nav class="nav-overlay" aria-label="Menú móvil">
+    <button class="nav-close" aria-label="Cerrar menú">&#x2715;</button>
+    <a href="index.html" class="nav-link">Inicio</a>
+    <a href="servicios.html" class="nav-link">Servicios</a>
+    <a href="proyectos.html" class="nav-link">Proyectos</a>
+    <a href="contacto.html"  class="nav-link">Contacto</a>
+  </nav>
+
+  <main>
+
+    <section class="page-header">
+      <div class="container">
+        <span class="overline">Portfolio</span>
+        <h1>Proyectos <em>de Daura</em></h1>
+      </div>
+    </section>
+
+    <section class="section-portfolio">
+      <div class="container">
+
+        <!-- FILTROS: <span> con onclick directo — no hay nada que pueda interferir -->
+        <div class="filters-bar" id="filtersBar">
+          <span class="filter-btn on"  onclick="filtrar(this,'all')">Todos</span>
+          <span class="filter-btn"     onclick="filtrar(this,'diseno')">Diseño</span>
+          <span class="filter-btn"     onclick="filtrar(this,'fotografia')">Fotografía</span>
+        </div>
+
+        <div class="portfolio-grid" id="grid">
+
+          <a href="proyecto-detalle.html?id=1" class="portfolio-item pi-1" data-cat="diseno">
+            <img src="img/proyecto-1.jpg" alt="Cocina azul marino con isla de mármol" width="800" height="600" loading="lazy" />
+            <div class="pi-overlay">
+              <span class="pi-name">Villa · Tenerife Norte</span>
+              <span class="pi-cat">Diseño</span>
+            </div>
+            <span class="pi-arrow">→</span>
+          </a>
+
+          <a href="proyecto-detalle.html?id=2" class="portfolio-item pi-2" data-cat="diseno">
+            <img src="img/proyecto-2.jpg" alt="Dormitorio moderno con cabecero tapizado" width="800" height="600" loading="lazy" />
+            <div class="pi-overlay">
+              <span class="pi-name">Dormitorio · Render</span>
+              <span class="pi-cat">Diseño</span>
+            </div>
+            <span class="pi-arrow">→</span>
+          </a>
+
+          <a href="proyecto-detalle.html?id=3" class="portfolio-item pi-3" data-cat="diseno">
+            <img src="img/proyecto-3.jpg" alt="Salón rústico con vigas y ventanal" width="800" height="600" loading="lazy" />
+            <div class="pi-overlay">
+              <span class="pi-name">Finca · Tenerife</span>
+              <span class="pi-cat">Diseño</span>
+            </div>
+            <span class="pi-arrow">→</span>
+          </a>
+
+          <a href="proyecto-detalle.html?id=4" class="portfolio-item pi-4" data-cat="diseno">
+            <div class="pi-bg" style="background:#8B7355"></div>
+            <div class="pi-soon">Próximamente</div>
+            <div class="pi-overlay">
+              <span class="pi-name">Apartamento · Santa Cruz</span>
+              <span class="pi-cat">Diseño</span>
+            </div>
+            <span class="pi-arrow">→</span>
+          </a>
+
+          <a href="proyecto-detalle.html?id=5" class="portfolio-item pi-5" data-cat="fotografia">
+            <div class="pi-bg" style="background:#6B7C5E"></div>
+            <div class="pi-soon">Próximamente</div>
+            <div class="pi-overlay">
+              <span class="pi-name">Airbnb · Puerto de la Cruz</span>
+              <span class="pi-cat">Fotografía</span>
+            </div>
+            <span class="pi-arrow">→</span>
+          </a>
+
+          <a href="proyecto-detalle.html?id=6" class="portfolio-item pi-6" data-cat="diseno">
+            <div class="pi-bg" style="background:#A89070"></div>
+            <div class="pi-soon">Próximamente</div>
+            <div class="pi-overlay">
+              <span class="pi-name">Estudio · La Laguna</span>
+              <span class="pi-cat">Diseño</span>
+            </div>
+            <span class="pi-arrow">→</span>
+          </a>
+
+          <a href="proyecto-detalle.html?id=7" class="portfolio-item pi-7" data-cat="fotografia">
+            <div class="pi-bg" style="background:#C4B5A5"></div>
+            <div class="pi-soon" style="color:rgba(44,36,22,.4)">Próximamente</div>
+            <div class="pi-overlay">
+              <span class="pi-name">Chalet · El Médano</span>
+              <span class="pi-cat">Fotografía</span>
+            </div>
+            <span class="pi-arrow">→</span>
+          </a>
+
+          <a href="proyecto-detalle.html?id=8" class="portfolio-item pi-8" data-cat="fotografia">
+            <div class="pi-bg" style="background:#7A8F6E"></div>
+            <div class="pi-soon">Próximamente</div>
+            <div class="pi-overlay">
+              <span class="pi-name">Casa rural · Güímar</span>
+              <span class="pi-cat">Fotografía</span>
+            </div>
+            <span class="pi-arrow">→</span>
+          </a>
+
+          <a href="proyecto-detalle.html?id=9" class="portfolio-item pi-9" data-cat="diseno">
+            <div class="pi-bg" style="background:#3D2E1E"></div>
+            <div class="pi-soon">Próximamente</div>
+            <div class="pi-overlay">
+              <span class="pi-name">Villa panorámica · Adeje</span>
+              <span class="pi-cat">Diseño</span>
+            </div>
+            <span class="pi-arrow">→</span>
+          </a>
+
+        </div>
+
+        <!-- Botón Ver más — solo visible en móvil vía JS -->
+        <div class="ver-mas-wrap" id="verMasWrap">
+          <button class="btn-ver-mas" id="btnVerMas" onclick="verMas()">
+            Ver más proyectos
+            <span aria-hidden="true">↓</span>
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section-cta">
+      <div class="container">
+        <div class="cta-layout">
+          <div class="cta-text">
+            <span class="overline overline-light">¿Tienes un proyecto?</span>
+            <h2 class="cta-title">Hablemos sobre<br><em>tu espacio</em></h2>
+            <p class="cta-sub">Cuéntame tu idea y vemos cómo darle vida — ya sea un render, el proyecto completo o unas fotos que enamoren.</p>
+          </div>
+          <div class="cta-actions">
+            <a href="https://wa.me/34684158317" class="btn-whatsapp" target="_blank" rel="noopener">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              Escribir por WhatsApp
+            </a>
+            <a href="contacto.html" class="btn-ghost btn-ghost--light">Formulario de contacto →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container footer-inner">
+      <a href="index.html" class="footer-logo"><img src="img/logo.png" alt="Daura Castro" class="nav-logo-img" /></a>
+      <nav class="footer-social">
+        <a href="#">Instagram</a><a href="#">Pinterest</a><a href="#">Houzz</a>
+      </nav>
+      <div class="footer-right">
+        <p class="footer-copy">© 2026 Daura Castro. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- main.js para cursor y hamburger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="js/main.js" defer></script>
+
+  <script>
+    /* ────────────────────────────────────────────────────────
+       PAGINACIÓN MÓVIL
+       Solo activa en pantallas <= 600px.
+       Muestra 4 proyectos inicialmente, el resto al pulsar.
+    ──────────────────────────────────────────────────────── */
+    var ITEMS_INICIALES = 4;
+    var paginacionActiva = false;
+    var categoriaActual = 'all';
+
+    function esMobil() {
+      return window.innerWidth <= 600;
+    }
+
+    function aplicarPaginacion() {
+      var items = document.querySelectorAll('.portfolio-item');
+      var verMasWrap = document.getElementById('verMasWrap');
+      var btnVerMas  = document.getElementById('btnVerMas');
+
+      if (!esMobil()) {
+        /* En desktop/tablet: mostrar todo, ocultar botón */
+        items.forEach(function(item) { item.classList.remove('paginated-hidden'); });
+        verMasWrap.style.display = 'none';
+        paginacionActiva = false;
+        return;
+      }
+
+      /* En móvil: calcular visibles según categoría activa */
+      var visibles = Array.from(items).filter(function(item) {
+        return !item.classList.contains('off');
+      });
+
+      if (visibles.length <= ITEMS_INICIALES) {
+        /* Todos caben en la primera pantalla — sin botón */
+        visibles.forEach(function(item) { item.classList.remove('paginated-hidden'); });
+        verMasWrap.style.display = 'none';
+        paginacionActiva = false;
+        return;
+      }
+
+      /* Ocultar los que van después de ITEMS_INICIALES */
+      visibles.forEach(function(item, i) {
+        if (i < ITEMS_INICIALES) {
+          item.classList.remove('paginated-hidden');
+        } else {
+          item.classList.add('paginated-hidden');
+        }
+      });
+
+      /* Mostrar botón */
+      verMasWrap.style.display = 'block';
+      btnVerMas.classList.remove('oculto');
+      paginacionActiva = true;
+    }
+
+    function verMas() {
+      /* Mostrar todos los ocultos por paginación con animación */
+      var ocultos = document.querySelectorAll('.portfolio-item.paginated-hidden');
+      ocultos.forEach(function(item) {
+        item.classList.remove('paginated-hidden');
+      });
+
+      /* Animar los recién aparecidos si GSAP disponible */
+      if (typeof gsap !== 'undefined' && ocultos.length > 0) {
+        gsap.from(Array.from(ocultos), {
+          y: 32, opacity: 0, duration: 0.8, ease: 'power2.out', stagger: 0.08
+        });
+      }
+
+      /* Ocultar botón */
+      document.getElementById('btnVerMas').classList.add('oculto');
+      document.getElementById('verMasWrap').style.display = 'none';
+      paginacionActiva = false;
+    }
+
+    /* ────────────────────────────────────────────────────────
+       FILTRO — función global llamada con onclick en el HTML.
+    ──────────────────────────────────────────────────────── */
+    function filtrar(btnPulsado, categoria) {
+      categoriaActual = categoria;
+
+      var grid  = document.getElementById('grid');
+      var btns  = document.querySelectorAll('.filter-btn');
+      var items = document.querySelectorAll('.portfolio-item');
+
+      /* 1. Actualizar botón activo */
+      btns.forEach(function(b) { b.classList.remove('on'); });
+      btnPulsado.classList.add('on');
+
+      /* 2. Clase filtered para el grid */
+      if (categoria === 'all') {
+        grid.classList.remove('filtered');
+      } else {
+        grid.classList.add('filtered');
+      }
+
+      /* 3. Mostrar / ocultar por categoría — limpiar paginación primero */
+      items.forEach(function(item) {
+        item.style.cssText = '';
+        item.classList.remove('paginated-hidden');
+        var cat = item.getAttribute('data-cat');
+        if (categoria === 'all' || cat === categoria) {
+          item.classList.remove('off');
+        } else {
+          item.classList.add('off');
+        }
+      });
+
+      /* 4. Reaplicar paginación móvil con la nueva selección */
+      aplicarPaginacion();
+    }
+
+    /* ── Init al cargar ──────────────────────────────────── */
+    document.addEventListener('DOMContentLoaded', function() {
+      aplicarPaginacion();
+    });
+
+    /* Reaplicar si cambia el tamaño de ventana */
+    window.addEventListener('resize', function() {
+      aplicarPaginacion();
+    });
+
+    /* ── GSAP — animación de entrada, SIN tocar filtros ───── */
+    if (typeof gsap !== 'undefined') {
+      gsap.registerPlugin(ScrollTrigger);
+
+      gsap.from('.portfolio-item:not(.paginated-hidden)', {
+        scrollTrigger: { trigger: '#grid', start: 'top 85%' },
+        y: 36, opacity: 0, duration: 0.9, ease: 'power2.out',
+        stagger: 0.055,
+        onComplete: function() {
+          document.querySelectorAll('.portfolio-item').forEach(function(el) {
+            el.style.cssText = '';
+          });
+        }
+      });
+    }
+  </script>
+
+  <div class="nav-overlay-backdrop"></div>
+
+</body>
+</html>
