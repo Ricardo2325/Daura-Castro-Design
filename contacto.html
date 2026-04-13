@@ -248,7 +248,7 @@
 
               <!-- Botón enviar -->
               <button type="submit" class="btn-submit">
-                Enviar por WhatsApp
+                Enviar mensaje
               </button>
 
             </form>
@@ -260,9 +260,9 @@
                   <path d="M5 13l4 4L19 7"/>
                 </svg>
               </div>
-              <p class="form-success-title">¡Mensaje <em>preparado!</em></p>
+              <p class="form-success-title">¡Mensaje <em>enviado!</em></p>
               <p class="form-success-sub">
-                Se abrirá WhatsApp para que puedas enviarlo directamente. Si no se abre automáticamente, comprueba que tienes WhatsApp instalado.
+                Gracias por escribirme. Te responderé lo antes posible, normalmente en menos de 24 horas.
               </p>
             </div>
 
@@ -388,26 +388,6 @@
         submitBtn.textContent = 'Enviando...';
         submitBtn.disabled    = true;
 
-        var waMsg = 'Hola Daura! Te escribo desde tu web \ud83d\udc4b\n\n' +
-          '*Nombre:* ' + nombre + '\n' +
-          '*Email:* ' + email + '\n' +
-          '*Tel\u00e9fono:* ' + telefono + '\n' +
-          '*Proyecto:* ' + proyecto + '\n' +
-          '*Disponibilidad:* ' + disponibilidad;
-
-        function mostrarExito() {
-          window.open('https://wa.me/34684158317?text=' + encodeURIComponent(waMsg), '_blank', 'noopener');
-          form.style.display = 'none';
-          successBox.classList.add('visible');
-          successBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }
-
-        function mostrarError() {
-          submitBtn.textContent = 'Reintentar';
-          submitBtn.disabled    = false;
-        }
-
-        /* ── Formspree — reemplaza XXXXXXXX por tu endpoint real ── */
         fetch('https://formspree.io/f/maqaynez', {
           method:  'POST',
           headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
@@ -421,15 +401,17 @@
         })
         .then(function(res) {
           if (res.ok) {
-            mostrarExito();
+            form.style.display = 'none';
+            successBox.classList.add('visible');
+            successBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
           } else {
-            /* Formspree rechazó — abre WhatsApp igualmente para no perder el lead */
-            mostrarExito();
+            submitBtn.textContent = 'Error al enviar. Inténtalo de nuevo.';
+            submitBtn.disabled    = false;
           }
         })
         .catch(function() {
-          /* Sin conexión — abre WhatsApp igualmente */
-          mostrarExito();
+          submitBtn.textContent = 'Error al enviar. Inténtalo de nuevo.';
+          submitBtn.disabled    = false;
         });
       });
 
